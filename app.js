@@ -5,8 +5,8 @@ var fs = require('fs');         // Read files
 var ejs = require('ejs');       // Templating Engine
 
 // OpenTok Constants for creating Session and Token values
-var OTKEY = '14971292';
-var OTSECRET = 'ecbe2b25afec7887bd72fe4763b87add8ce02658';
+var OTKEY = process.env.TB_KEY;
+var OTSECRET = process.env.TB_SECRET;
 
 // Setup when server first starts
 var urlSessions = {}; // mapping url to OpenTok Sessions
