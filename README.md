@@ -4,7 +4,11 @@ This repo is designed for beginners. It's the bare minimum to build a fully func
 ## How it works
 After you run the nodejs server, simply go to your browser and type `localhost:9393/roomid` Everyone in the same room will be able to video chat with each other.
 
-For a live demo, this is hosted at `http://nodeopentok.aws.af.cm/` This application is hosted with [appfog](https://www.appfog.com/)
+For a live demo, this is hosted at [http://nodeopentok.aws.af.cm/]().  This application is hosted with [appfog](https://www.appfog.com/)
+
+## Requirements
+This app features the latest in Web Media Streaming technology using WebRTC. Currently, only **Chrome** supports it. To run on other browsers using flash, simply change the javascript library to use flash in `view.ejs`
+> `<script src="http://static.opentok.com/v0.91/js/TB.min.js"></script>`
 
 ## File Descriptions
 #### README.md
@@ -29,5 +33,5 @@ First install all necessary dependencies from package.json `npm install`
 
 Run NodeJS app `node app.js`
 
-Thanks for Reading!
+Go Code!
 - [@songz](http://twitter.com/songz)
