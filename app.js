@@ -15,12 +15,6 @@ var OpenTok = new OTSDK.OpenTokSDK(OTKEY, OTSECRET);
 // read view Template into a string
 var htmlString = fs.readFileSync('./view.ejs', 'utf8'); 
 
-// Write response after all data (session Id, token) is ready
-function sendResponse(str, responder, data){
-  responder.writeHead(200);
-  responder.end( ejs.render(str, data) );
-}
-
 // Start Server
 var server = http.createServer(function(req, res){
   if(urlSessions[req.url]==undefined){ // No OpenTok sessionId for url
@@ -42,5 +36,11 @@ var server = http.createServer(function(req, res){
 
   console.log( urlSessions );
 });
-
 server.listen(9393);
+
+// Write response after all data (session Id, token) is ready
+function sendResponse(str, responder, data){
+  responder.writeHead(200);
+  responder.end( ejs.render(str, data) );
+}
+
