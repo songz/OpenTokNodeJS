@@ -33,6 +33,6 @@ First install all necessary dependencies from package.json `npm install`
 
 Run NodeJS app `node app.js`
 
-Go Code!
+## Go Code!
 
 Thanks for reading. My name is Song Zheng and I am a Developer Evangelist at [TokBox](http://tokbox.com) - [@songz](http://twitter.com/songz) 
