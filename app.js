@@ -2,7 +2,6 @@
 // *** Required modules, Listed in the order of importance
 // ***
 var OpenTokLibrary = require('opentok');
-var HTTPServer = require('http');
 var StaticFileReader = require('fs');
 var TemplatingEngine = require('ejs');
 var express = require('express');
@@ -18,7 +17,6 @@ var OTSECRET = process.env.TB_SECRET;
 // ***
 var urlSessions = {};
 var OpenTokObject = new OpenTokLibrary.OpenTokSDK(OTKEY, OTSECRET);
-var viewTemplate = StaticFileReader.readFileSync('./views/index.ejs', 'utf8'); 
 
 // ***
 // *** Setup Express to handle static files in public folder
@@ -26,6 +24,8 @@ var viewTemplate = StaticFileReader.readFileSync('./views/index.ejs', 'utf8');
 // ***
 var app = express();
 app.use(express.static(__dirname + '/public'));
+app.set( 'views', __dirname + "/views");
+app.set( 'view engine', 'ejs' );
 
 // ***
 // *** When user goes to root directory, redirect them to a room (timestamp)
@@ -64,7 +64,6 @@ app.listen(port);
 function sendResponse( sessionId, responder ){
   var token = OpenTokObject.generateToken( {session_id: sessionId} );
   var data = {OpenTokKey:OTKEY, sessionId: sessionId, token:token};
-  responder.writeHead(200);
-  responder.end( TemplatingEngine.render(viewTemplate, data) );
+  responder.render( 'index', data );
 }
 
