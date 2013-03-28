@@ -5,6 +5,7 @@
       "opentok":"",
       "http":"",
       "fs":"",
-      "ejs":""
+      "ejs":"",
+      "express":""
     }
 }

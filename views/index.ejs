@@ -6,8 +6,11 @@
   <script type="text/javascript" src="https://swww.tokbox.com/webrtc/v2.0/js/TB.min.js"></script>
 </head>
 <body>
+  <h1>OpenTok NodeJS Group chat</h1>
+  <h4>To go to your own room, simply type: http://.../yourRoomName</h4>
+  <h5>Code for this app available on <a href="https://github.com/songz/OpenTokNodeJS">github</a></h5>
   <div id="videos">
-    <div id="myPublisherDiv"></div>
+    <span id="myPublisherDiv"></span>
   </div>
 	
   <script type="text/javascript">
@@ -47,9 +50,9 @@
         }
 
         // Create the div to put the subscriber element in to
-        var div = document.createElement('div');
-        div.setAttribute('id', 'stream' + streams[i].streamId);
-        document.body.appendChild(div);
+        var span = document.createElement('span');
+        span.setAttribute('id', 'stream' + streams[i].streamId);
+        document.body.appendChild(span);
 
         // Subscribe to the stream
         session.subscribe(streams[i], div.id);
