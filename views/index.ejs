@@ -10,7 +10,7 @@
   <h4>To go to your own room, simply type: http://.../yourRoomName</h4>
   <h5>Code for this app available on <a href="https://github.com/songz/OpenTokNodeJS">github</a></h5>
   <div id="videos">
-    <span id="myPublisherDiv"></span>
+    <div id="myPublisherDiv"></div>
   </div>
 	
   <script type="text/javascript">
@@ -50,9 +50,9 @@
         }
 
         // Create the div to put the subscriber element in to
-        var span = document.createElement('span');
-        span.setAttribute('id', 'stream' + streams[i].streamId);
-        document.body.appendChild(span);
+        var div = document.createElement('div');
+        div.setAttribute('id', 'stream' + streams[i].streamId);
+        document.body.appendChild(div);
 
         // Subscribe to the stream
         session.subscribe(streams[i], div.id);
