@@ -2,8 +2,6 @@
 // *** Required modules, Listed in the order of importance
 // ***
 var OpenTokLibrary = require('opentok');
-var StaticFileReader = require('fs');
-var TemplatingEngine = require('ejs');
 var express = require('express');
 
 // ***
