@@ -8,7 +8,7 @@ Run your nodejs server `node app.js` or `supervisor app.js`
 
 After you run the nodejs server, simply go to your browser and type `localhost:9393/roomid` Everyone in the same room will be able to video chat with each other.
 
-For a live demo, this is hosted at [http://nodeopentok.aws.af.cm/]().  
+For a live demo, this is hosted at [http://nodeopentok.aws.af.cm/](http://nodeopentok.aws.af.cm/).  
 
 ## Requirements
 This app features the latest in Web Media Streaming technology using WebRTC. Currently, only **Chrome** supports it. To run on other browsers using flash, simply change the javascript library to use flash in `view.ejs`
