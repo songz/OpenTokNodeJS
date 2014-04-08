@@ -39,7 +39,7 @@ app.get("/", function( req, res ){
 // ***
 app.get("/:room", function(req, res){
   if(urlSessions[ req.params.room ] == undefined){
-    OpenTokObject.createSession(function(sessionId){
+    OpenTokObject.createSession(function(err, sessionId){
       urlSessions[ req.params.room ] = sessionId;
       sendResponse( sessionId, res );
     });
